@@ -13,11 +13,12 @@ public class MyHttpClient {
 
         var request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://www.google.com"))
+                .uri(URI.create("http://localhost:7777"))
                 .version(HttpClient.Version.HTTP_1_1)
                 .build();
 
         var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.headers());
         System.out.println(response.headers());
         System.out.println(response.body());
 
